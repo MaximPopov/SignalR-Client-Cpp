@@ -7,9 +7,11 @@
 
 namespace signalr
 {
-    web_request::web_request(const web::uri &url)
-        : m_url(url)
-    { }
+    web_request::web_request(const web::uri &url, bool validate_certificates) 
+		: m_url(url)
+		, m_validate_certificates(validate_certificates)
+    {
+    }
 
     void web_request::set_method(const utility::string_t &method)
     {
@@ -31,7 +33,9 @@ namespace signalr
 
     pplx::task<web_response> web_request::get_response()
     {
-        web::http::client::http_client client(m_url);
+		web::http::client::http_client_config config;
+		config.set_validate_certificates(m_validate_certificates);
+		web::http::client::http_client client(m_url, config);
 
         return client.request(m_request)
             .then([](web::http::http_response response)

@@ -22,10 +22,10 @@ namespace signalr
     }
 
     std::shared_ptr<hub_connection_impl> hub_connection_impl::create(const utility::string_t& url, const utility::string_t& query_string,
-        trace_level trace_level, const std::shared_ptr<log_writer>& log_writer, bool use_default_url)
+        trace_level trace_level, const std::shared_ptr<log_writer>& log_writer, bool use_default_url, bool validate_certificates)
     {
         return hub_connection_impl::create(url, query_string, trace_level, log_writer, use_default_url,
-            std::make_unique<web_request_factory>(), std::make_unique<transport_factory>());
+            std::make_unique<web_request_factory>(validate_certificates), std::make_unique<transport_factory>(validate_certificates));
     }
 
     std::shared_ptr<hub_connection_impl> hub_connection_impl::create(const utility::string_t& url, const utility::string_t& query_string,

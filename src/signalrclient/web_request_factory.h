@@ -11,8 +11,13 @@ namespace signalr
     class web_request_factory
     {
     public:
+		explicit web_request_factory(bool validate_certificates = true);
+
         virtual std::unique_ptr<web_request> create_web_request(const web::uri &url);
 
         virtual ~web_request_factory();
+
+    private:
+		bool m_validate_certificates;
     };
 }

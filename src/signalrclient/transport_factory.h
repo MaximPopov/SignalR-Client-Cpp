@@ -13,11 +13,16 @@ namespace signalr
     class transport_factory
     {
     public:
+		explicit transport_factory(bool validate_certificates = true);
+
         virtual std::shared_ptr<transport> create_transport(transport_type transport_type, const logger& logger,
             const std::unordered_map<utility::string_t, utility::string_t>& headers,
             std::function<void(const utility::string_t&)> process_response_callback,
             std::function<void(const std::exception&)> error_callback);
 
         virtual ~transport_factory();
+
+    private:
+		bool m_validate_certificates;
     };
 }

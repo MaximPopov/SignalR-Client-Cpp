@@ -7,6 +7,11 @@
 
 namespace signalr
 {
+	transport_factory::transport_factory(bool validate_certificates)
+		: m_validate_certificates(validate_certificates)
+	{
+	}
+
     std::shared_ptr<transport> transport_factory::create_transport(transport_type transport_type, const logger& logger,
         const std::unordered_map<utility::string_t, utility::string_t>& headers,
         std::function<void(const utility::string_t&)> process_response_callback,
@@ -14,7 +19,8 @@ namespace signalr
     {
         if (transport_type == signalr::transport_type::websockets)
         {
-            return websocket_transport::create([headers](){ return std::make_shared<default_websocket_client>(headers); },
+			bool validate_certificates = m_validate_certificates;
+            return websocket_transport::create([headers, validate_certificates](){ return std::make_shared<default_websocket_client>(headers, validate_certificates); },
                 logger, process_response_callback, error_callback);
         }
 

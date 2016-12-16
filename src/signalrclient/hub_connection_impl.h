@@ -21,7 +21,7 @@ namespace signalr
     {
     public:
         static std::shared_ptr<hub_connection_impl> create(const utility::string_t& url, const utility::string_t& query_string,
-            trace_level trace_level, const std::shared_ptr<log_writer>& log_writer, bool use_default_url);
+            trace_level trace_level, const std::shared_ptr<log_writer>& log_writer, bool use_default_url, bool validate_certificates);
 
         static std::shared_ptr<hub_connection_impl> create(const utility::string_t& url, const utility::string_t& query_string,
             trace_level trace_level, const std::shared_ptr<log_writer>& log_writer, bool use_default_url,

@@ -12,7 +12,7 @@ namespace signalr
     class web_request
     {
     public:
-        explicit web_request(const web::uri &url);
+        explicit web_request(const web::uri &url, bool validate_certificates = true);
 
         virtual void set_method(const utility::string_t &method);
         virtual void set_user_agent(const utility::string_t &user_agent_string);
@@ -27,5 +27,6 @@ namespace signalr
     private:
         const web::uri m_url;
         web::http::http_request m_request;
+		bool m_validate_certificates;
     };
 }
