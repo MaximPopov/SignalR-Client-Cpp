@@ -24,6 +24,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "signalrclient-e2e-tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "signalrclient-testhost", "test\signalrclient-testhost\signalrclient-testhost.csproj", "{11848039-1F13-4047-9539-8F9F45930788}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "signalrclientuwpdll", "src\signalrclientuwpdll\Build\VS\signalrclientuwpdll.vcxproj", "{05666D49-6DE0-421B-B43C-58759CF3FED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +120,20 @@ Global
 		{11848039-1F13-4047-9539-8F9F45930788}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{11848039-1F13-4047-9539-8F9F45930788}.Release|Win32.ActiveCfg = Release|Any CPU
 		{11848039-1F13-4047-9539-8F9F45930788}.Release|x64.ActiveCfg = Release|Any CPU
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|Win32.Build.0 = Debug|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|x64.ActiveCfg = Debug|x64
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Debug|x64.Build.0 = Debug|x64
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|Any CPU.ActiveCfg = Release|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|Win32.ActiveCfg = Release|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|Win32.Build.0 = Release|Win32
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|x64.ActiveCfg = Release|x64
+		{05666D49-6DE0-421B-B43C-58759CF3FED7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
